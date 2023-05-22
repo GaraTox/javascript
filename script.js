@@ -60,6 +60,13 @@ th2.textContent = "Supprimer";
 // Ajouter le nouvel élément à l'élément parent
 tr1.appendChild(th2);
 
+/*BLOC DEPLACER
+let _th3 = document.createElement("th");
+_th3.setAttribute("class","class_th3");
+_th3.textContent = "Déplacer";
+// Ajouter le nouvel élément à l'élément parent
+tr1.appendChild(_th3);*/
+
 
 // Créer et configurer un td
 let JoueursFoot = ['Mbappe','Griezmann','Ronaldo','Messi','Neymar'];
@@ -89,10 +96,27 @@ function suppLigne(event){
     tr2 = elemBtn.parentNode.parentNode;
     tr2.remove();
 }
+
 // Ajouter le nouvel élément à l'élément parent
 _tbody.appendChild(tr2);
 tr2.appendChild(_td);
 tr2.appendChild(_td2);
 _td2.appendChild(btn_sup);
 }
+
+// input
+let _input = document.createElement("input");
+_input.setAttribute("id","addUser");
+tab.appendChild(_input);
+// Bouton "ajouter" input
+let Ajoutinput = document.createElement("button");
+Ajoutinput.setAttribute("onclick",'addNames()');
+Ajoutinput.innerHTML+="Ajouter";
+tab.appendChild(Ajoutinput);
+
+Ajoutinput.addEventListener('click', () =>{
+    JoueursFoot.push(_input.value);
+    _input.value = '';
+});
+
 
